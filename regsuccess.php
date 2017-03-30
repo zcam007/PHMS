@@ -29,9 +29,9 @@ if (isset( $_POST['signup']))
     $password = $_POST['password'];
     $ssn = $_POST['ssn'];
     $mobile = $_POST['mob'];
-    $blood = $_POST['blood'];
+    //$blood = $_POST['blood'];
 
-    $sql = "INSERT INTO users (firstname, lastname, username,email,password,ssn,mobile,blood)VALUES ('$fname','$lname','$username','$email','$password',$ssn,$mobile,'$blood')";
+    $sql = "INSERT INTO users (firstname, lastname, username,email,password,ssn,mobile)VALUES ('$fname','$lname','$username','$email','$password',$ssn,$mobile)";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
@@ -41,4 +41,6 @@ if (isset( $_POST['signup']))
 }
 mysqli_close($conn);
 echo "Connected successfully";
+?>
+
 

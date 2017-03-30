@@ -28,7 +28,6 @@ else
  }
 
 ?>
-<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/244497/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
 
 <section class="hero is-dark is-large">
     <div class="hero-head">
@@ -41,6 +40,7 @@ else
     </div>
     </div>
     <div class="hero-body">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/244497/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
 
     </div>
 </section>

@@ -106,13 +106,20 @@ include ('master.php');
 
                 </div>
 
-                <div class="column is-offset-10">
+                <div class="columns">
+                    <div class="column is-offset-8">
+                        <p class="control">
+                            <input type="button" name="additional" class="button is-light" value="Add More details..">
+                        </p>
+                    </div>
+                <div class="column ">
                     <p class="control">
                         <input type="submit" name="signup" class="button is-info" value="Signup!">
                     </p>
 
 
 
+                </div>
                 </div>
         </form>
     </div>
@@ -128,3 +135,4 @@ include ('master.php');
     </div>
 
 </section>
+
