@@ -87,6 +87,15 @@ include ('master.php');
 
                 <div class="columns">
                     <div class="column is-6">
+                        <p class="control has-icon">
+                            <input class="input" type="number" name="age" requireds placeholder="Age" maxlength="15">
+                            <span class="icon is-small"><i class="fa fa-lock"></i></span>
+                        </p>
+                    </div>
+
+
+
+                    <div class="column is-6">
                         <div class="control">
                             <div class="select is-fullwidth">
                                 <select requireds name="blood">

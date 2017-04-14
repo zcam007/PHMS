@@ -2,3 +2,18 @@
 {
     color: white !important;
 }
+.dashboard
+{
+    position: absolute;
+    font-size: 20px !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    text-shadow: 0px 0px 5px red;
+    left: 30px;
+    
+}
+.overridebody
+{
+    position: relative;
+    top: -200px;
+}
