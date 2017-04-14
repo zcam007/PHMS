@@ -65,3 +65,10 @@ var getJSON = function(url, callback)
     };
     xhr.send();
 };
+
+function test()
+{
+    console.log("asd");
+   var k= document.getElementById('heartbeat');
+   k.src='img/h_b1.gif';
+}

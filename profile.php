@@ -50,7 +50,7 @@ else
         
         <div class=" columns">
         <div class="column is-3">
-    <img src="img/h_b1.gif" alt="Heart" height="202" width="602">
+    <img src="img/h_b_stop.jpg" alt="Heart" height="202" width="602" onclick="test()" id="heartbeat">
     
         </div>
         <div class="column is-offset-6">
