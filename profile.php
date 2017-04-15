@@ -5,19 +5,9 @@
  * Date: 15-Mar-17
  * Time: 11:15 AM
  */
-//session_start();
-//header("Refresh:0");
-
-
 require ('master/header.php');
 require ('master.php');
-/*
-if(isset($_POST['Submit'])) {
-    $username = $_POST['username'];
-    $_SESSION['username']=$username;
-    header("Refresh:0");
-}
-*/
+
 
 if(isset($_SESSION['username'])!=null)
 {
@@ -26,6 +16,44 @@ if(isset($_SESSION['username'])!=null)
 else
     {
  }
+
+
+$servername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+
+// Create connection
+$conn = mysqli_connect($servername, $dbusername, $dbpassword,"patienthealthmonitoringsystem");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT gender, age FROM users where username='$loggedinuser'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+      //  echo $row['gender'].$row["age"];
+        $cookie_name_1 = "c_gender";
+        $cookie_value_1 = $row['gender'];
+        setcookie($cookie_name_1, $cookie_value_1, time() + (86400 * 30), "/");
+
+        $cookie_name_2 = "c_age";
+        $cookie_value_2 = $row['age'];
+        setcookie($cookie_name_2, $cookie_value_2, time() + (86400 * 30), "/");
+
+    }
+} 
+else {
+//    echo "0 results";
+}
+
+mysqli_close($conn);
+
 
 ?>
 <link rel="stylesheet" href="css/switch.css">
@@ -46,18 +74,18 @@ else
         <div class="container overridebody ">
         
         <div class=" columns ">
-                <div class="column is-3 "><img src="img/h_b_stop.jpg " alt="Heart " height="202 " width="602 " onclick="test() " id="heartbeat"></div>
+                <div class="column is-3 "><img src="img/h_b_stop.jpg " alt="Heart " height="202 " width="602 " onclick="checkCookie() " id="heartbeat"></div>
                 
-                <div class="column is-3 "><p  class="sensor_reading " id="bpmskeleton" onload="init(); ">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p></div>
-                
+                <div class="column is-3 ">
+                    <p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>
+                    <div class="_statusbar" id="statusbar"> Status: </div>
+                </div>
                 
                 <div class="column is-1" >
-               
                 <span class="toggle">
                     <input type="checkbox" ID="ctrlbutton" onclick="btnctrlfunc();">
                     <label data-off="Stop" data-on="Start"></label>
                 </span>
- 
                 </div>
                 
                 <div class="column is-offset-2" id="switch_control" style="display:none;" >
@@ -79,8 +107,7 @@ include ('master/footer.php');
 <script>
 $( window ).load(function() {
   // Run code
-  //console.log("load");
- //fetchdata();
+ 
 });
 
 </script>

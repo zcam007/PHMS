@@ -27,13 +27,13 @@ if (isset( $_POST['signup']))
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $ssn = $_POST['ssn'];
+    $sex = $_POST['gender'];
     $mobile = $_POST['mob'];
     $age=$_POST['age'];
     $blood = $_POST['blood'];
     
 
-    $sql = "INSERT INTO users (firstname, lastname, username,email,password,ssn,mobile,age,blood)VALUES ('$fname','$lname','$username','$email','$password',$ssn,$mobile,$age,'$blood')";
+    $sql = "INSERT INTO users (firstname, lastname, username,email,password,gender,mobile,age,blood)VALUES ('$fname','$lname','$username','$email','$password','$sex',$mobile,$age,'$blood')";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
