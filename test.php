@@ -8,63 +8,59 @@
 //https://plot.ly/javascript/line-charts/
 
 ?>
-<script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
 <script src="js/main.js"></script>
-<div id="tester" onclick="fetchdataa()" style="width:600px;height:250px;">dff</div>
-<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/244497/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+<div id="tester" onclick="fetch1()" style="width:600px;height:250px;">dff</div>
 
 <script>
-    function fetchdataa(){
-        console.log("ahihihihsd");
-        var text=[];
 
-        getJSON("https://api.thingspeak.com/channels/244497/feeds.json?api_key=JWLSXR4C439LN1WD",
-            function(err, data) {
-                if (err != null) {
-                    alert("Something went wrong: " + err);
-                } else {
-                    var len=data.feeds.length;
-                    //alert(len);
-                    var i;
-                    for( i=0;i<len;i++)
-                    {
-                        text[i]= data.feeds[i].field1;
-
-
-                    }
-                    console.log(text);
-                    var trace1 = {
-                        x: [10, 15, 13, 17,19,20,50],
-                        y: text,
-                        mode: 'lines+markers',
-                        marker: {
-                            color: 'rgb(219, 64, 82)',
-                            size: 12
-                        }
-                    };
-                    var data = [trace1];
-
-                    var layout = {
-                        title: 'Line and Scatter Styling'
-                    };
-
-                    Plotly.newPlot('tester', data, layout);
+function fetchdata(){
+    console.log("asd");
+    getJSON("https://api.thingspeak.com/channels/258210/feeds.json?api_key=RAH5AK4OKTMV3Y3F",
+        function(err, data) {
+            if (err != null) {
+                alert("Something went wrong: " + err);
+            } 
+            else
+             {
+                var len=data.feeds.length;
+                //alert(len);
+                var i;
+                var text="";
+                console.log(len);
+                for( i=0;i<len;i++)
+                {
+                    text += data.feeds[i].field1 + "<br>";
                 }
-            });
-        //console.log(text[0]);
+               // document.getElementById("tester").innerHTML = text;
+                var te=data.feeds[len-1].field1;
+                document.getElementById("tester").innerHTML = te;
 
-    }
+            }
+        });
+        repeater = setTimeout(fetch, 1000);
+}
+function fetch1()
+{
+    fetch();
+}
 
-
-</script>
-
-<div id='content'></div>
-<script>
-    function loadChirp(){
-        $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22"+url+"%22&format=json&callback=?",
-            function(data) {
-                $('#content').html('The artist is: ' + data.query.results.json.artist + '<br/><br/>');
-            });
-        setTimeout("loadChirp()",5000);
-    }
+var getJSON = function(url, callback)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", url, true);
+    xhr.responseType = "json";
+    xhr.onload = function()
+    {
+        var status = xhr.status;
+        if (status == 200)
+        {
+            callback(null, xhr.response);
+        }
+        else
+        {
+            callback(status);
+        }
+    };
+    xhr.send();
+};
 </script>
