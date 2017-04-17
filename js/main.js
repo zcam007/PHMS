@@ -149,7 +149,16 @@ function returnStatus()
     var colors=["green","#7EC0EE","red"];
     if(gender=="Male")
     {
-        if(age<=25)
+       male(age);
+    }
+    else if(gender=="Female")
+    {
+        female(age);
+    }
+}
+function male(age)
+{
+     if(age<=25)
         {
             if(sensor_avg_value>=49 && sensor_avg_value<=55)
             {
@@ -419,5 +428,277 @@ function returnStatus()
                 statusmsg.style.color=colors[2];
             }
         }
-    }
+}
+function female(age)
+{
+    if(age<=25)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=60)
+            {
+                console.log("Athelete");
+                statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=61 && sensor_avg_value<=65)
+            {
+                console.log("Excellent");
+                statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=66 && sensor_avg_value<=69)
+            {
+                console.log("Good");
+                statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=70 && sensor_avg_value<=73)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=74 && sensor_avg_value<=78)
+            {
+                console.log("Avg");
+                statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=79 && sensor_avg_value<=84)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=85)
+            {
+                console.log("Poor");
+                statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
+        if(age>=26 && age<=35)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=59)
+            {
+                console.log("Athelete");
+                 statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=60 && sensor_avg_value<=64)
+            {
+                console.log("Excellent");
+                 statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=65 && sensor_avg_value<=68)
+            {
+                console.log("Good");
+                 statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=69 && sensor_avg_value<=72)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=73 && sensor_avg_value<=76)
+            {
+                console.log("Avg");
+                 statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=77 && sensor_avg_value<=82)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=83)
+            {
+                console.log("Poor");
+                 statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
+        if(age>=36 && age<=45)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=59)
+            {
+                console.log("Athelete");
+                 statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=60 && sensor_avg_value<=64)
+            {
+                console.log("Excellent");
+                 statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=65 && sensor_avg_value<=69)
+            {
+                console.log("Good");
+                statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=70 && sensor_avg_value<=73)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=74 && sensor_avg_value<=78)
+            {
+                console.log("Avg");
+                statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=79 && sensor_avg_value<=84)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=85)
+            {
+                console.log("Poor");
+                statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
+        if(age>=46 && age<=55)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=60)
+            {
+                console.log("Athelete");
+                 statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=61 && sensor_avg_value<=65)
+            {
+                console.log("Excellent");
+                 statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=65 && sensor_avg_value<=69)
+            {
+                console.log("Good");
+                statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=70 && sensor_avg_value<=73)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=74 && sensor_avg_value<=77)
+            {
+                console.log("Avg");
+                statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=78 && sensor_avg_value<=83)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=84)
+            {
+                console.log("Poor");
+                statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
+        if(age>=56 && age<=65)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=59)
+            {
+                console.log("Athelete");
+                 statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=60 && sensor_avg_value<=64)
+            {
+                console.log("Excellent");
+                 statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=65 && sensor_avg_value<=68)
+            {
+                console.log("Good");
+                statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=69 && sensor_avg_value<=73)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=74 && sensor_avg_value<=77)
+            {
+                console.log("Avg");
+                statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=78 && sensor_avg_value<=83)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=84)
+            {
+                console.log("Poor");
+                statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
+        if(age>65)
+        {
+            if(sensor_avg_value>=54 && sensor_avg_value<=59)
+            {
+                console.log("Athelete");
+                 statusmsg.innerHTML="Athelete";
+                statusmsg.style.color=colors[0];
+            }
+            else if(sensor_avg_value>=60 && sensor_avg_value<=64)
+            {
+                console.log("Excellent");
+                 statusmsg.innerHTML="Excellent";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=65 && sensor_avg_value<=68)
+            {
+                console.log("Good");
+                statusmsg.innerHTML="Good";
+                statusmsg.style.color=colors[0];
+            }
+             else if(sensor_avg_value>=69 && sensor_avg_value<=72)
+            {
+                console.log("Abve avg");
+                statusmsg.innerHTML="Above Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=73 && sensor_avg_value<=76)
+            {
+                console.log("Avg");
+                statusmsg.innerHTML="Average";
+                statusmsg.style.color=colors[1];
+            }
+             else if(sensor_avg_value>=77 && sensor_avg_value<=84)
+            {
+                console.log("Below Avg");
+                statusmsg.innerHTML="Below Average";
+                statusmsg.style.color=colors[2];
+            }
+             else if(sensor_avg_value>=84)
+            {
+                console.log("Poor");
+                statusmsg.innerHTML="Poor";
+                statusmsg.style.color=colors[2];
+            }
+        }
 }
