@@ -108,7 +108,13 @@ include ('master/footer.php');
 <script>
 $( window ).load(function() {
   // Run code
- 
+ //console.log( "ass");
 });
+function sms()
+{
+    <?php 
+   // include ('sms.php');
+    ?>  
+}
 
 </script>

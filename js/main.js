@@ -149,15 +149,16 @@ function returnStatus()
     var colors=["green","#7EC0EE","red"];
     if(gender=="Male")
     {
-       male(age);
+       male(age,colors);
     }
     else if(gender=="Female")
     {
-        female(age);
+        female(age,colors);
     }
 }
-function male(age)
+function male(age,colors)
 {
+    console.log("Male triggered");
      if(age<=25)
         {
             if(sensor_avg_value>=49 && sensor_avg_value<=55)
@@ -246,6 +247,7 @@ function male(age)
                 console.log("Poor");
                  statusmsg.innerHTML="Poor";
                 statusmsg.style.color=colors[2];
+                
             }
         }
         if(age>=36 && age<=45)
@@ -429,8 +431,9 @@ function male(age)
             }
         }
 }
-function female(age)
+function female(age,colors)
 {
+    console.log("female Triggered");
     if(age<=25)
         {
             if(sensor_avg_value>=54 && sensor_avg_value<=60)
@@ -519,6 +522,8 @@ function female(age)
                 console.log("Poor");
                  statusmsg.innerHTML="Poor";
                 statusmsg.style.color=colors[2];
+                console.log("saddd");
+                sms();
             }
         }
         if(age>=36 && age<=45)
