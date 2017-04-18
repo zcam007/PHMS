@@ -26,10 +26,49 @@
     display: none;
     color:white;
     position: relative;
-    top:40%;
+    top:20%;
     font-size: large;
 }
 ._statusmsg
 {
     color:red;
 }
+.blink_text {
+
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+    display: none;
+     color: red;
+    }
+
+    @-moz-keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+    @-webkit-keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+
+    @keyframes blinker {  
+     0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+     }
+     ._welcomeMsg
+     {
+         color: white;
+         text-align: right;
+     }
+     ._welcomeMsg:last-child
+     {
+         color:#7EC0EE;
+         position: relative;
+         
+     }
+
+     

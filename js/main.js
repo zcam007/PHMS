@@ -105,6 +105,7 @@ function btnctrlfunc()
     var graph=document.getElementById('switch_control');
     var status=document.getElementById('statusbar');
     var status_table=document.getElementById('statustable');
+    var blnk=document.getElementById('live_blink');
     if(flag)
     {
         startgif();
@@ -112,6 +113,12 @@ function btnctrlfunc()
         graph.style.display='block';
         status.style.display='block';
         status_table.style.display='block';
+        blnk.style.display='block';
+        $("#switch_control").removeClass("animated fadeOutDown");
+        $("#switch_control").addClass("animated fadeInUp");
+        
+        $("#statustable").removeClass("animated fadeOutDown");
+        $("#statustable").addClass("animated flipInY");
         
     }
     else
@@ -119,9 +126,17 @@ function btnctrlfunc()
         console.log(flag);
         stopgif();
         stop_fetchdata();
-        graph.style.display='none';
-        status.style.display='none';
-        status_table.style.display='none';
+        $("#switch_control").removeClass("animated fadeInUp");
+        $("#switch_control").addClass("animated fadeOutDown");
+        
+        $("#statustable").removeClass("animated flipInY");
+        $("#statustable").addClass("animated fadeOutDown");
+        
+        //graph.style.display='none';
+        //statustable.style.display='none';
+        blnk.style.display='none';
+        //status_table.style.display='none';
+        
         document.getElementById("bpmskeleton").innerHTML = "Heart Beats Per Minute: Not Loaded!";
     }
     

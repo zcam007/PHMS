@@ -50,19 +50,22 @@ text-shadow: 0px 0px 30px white !important;
         });
     });
 </script>
-
-<section class="hero is-dark is-large">
+<script src="js/conn.js"></script>
+<section class="hero is-black is-large">
     <!-- Hero header: will stick at the top -->
     <div class="hero-head"></div>
 
     <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-        <div class="container has-text-centered">
+    <canvas style="position:absolute;z-index:1;"></canvas>
+    <div class="hero-body" style="height:800px;">
+        
+        <div class="container has-text-centered" style=";z-index:100;">
             <h1 class=" title title_shadow">Patient Health Monitoring System</h1>
             <h2 class="subtitle">Your Health is our health!</h2>
 
         </div>
     </div>
+    
 </section>
 <?php
 include('master\footer.php');

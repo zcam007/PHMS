@@ -20,7 +20,7 @@ include ('master.php');
                 <div class="columns">
                 <div class="column is-6">
                     <p class="control has-icon">
-                        <input class="input" type="text" name="fname" requireds placeholder="First Name">
+                        <input class="input" type="text" name="fname" required placeholder="First Name">
                         <span class="icon is-small"><i class="fa fa-info"></i></span>
                     </p>
                 </div>
@@ -28,7 +28,7 @@ include ('master.php');
                 <div class="column is-6">
 
                     <p class="control has-icon">
-                        <input class="input" type="text" name="lname" requireds placeholder="Last Name">
+                        <input class="input" type="text" name="lname" required placeholder="Last Name">
                         <span class="icon is-small"><i class="fa fa-info"></i></span>
                     </p>
                 </div>
@@ -37,7 +37,7 @@ include ('master.php');
                 <div class="columns">
                     <div class="column is-6">
                         <p class="control has-icon">
-                            <input class="input" type="text" name="username" requireds placeholder="UserName">
+                            <input class="input" type="text" name="username" required placeholder="UserName">
                             <span class="icon is-small"><i class="fa fa-user"></i></span>
                         </p>
                     </div>
@@ -45,7 +45,7 @@ include ('master.php');
                     <div class="column is-6">
 
                         <p class="control has-icon">
-                            <input class="input" type="email" name="email" requireds placeholder="Email">
+                            <input class="input" type="email" name="email" required placeholder="Email">
                             <span class="icon is-small"><i class="fa fa-envelope"></i></span>
                         </p>
                     </div>
@@ -54,7 +54,7 @@ include ('master.php');
                 <div class="columns">
                     <div class="column is-6">
                         <p class="control has-icon">
-                            <input class="input" type="password" name="password" requireds placeholder="Password" maxlength="15">
+                            <input class="input" type="password" name="password" required placeholder="Password" maxlength="15">
                             <span class="icon is-small"><i class="fa fa-lock"></i></span>
                         </p>
                     </div>
@@ -62,7 +62,7 @@ include ('master.php');
                     <div class="column is-6">
 
                         <p class="control has-icon">
-                            <input class="input" type="password" requireds placeholder="Confirm Password">
+                            <input class="input" type="password" required placeholder="Confirm Password">
                             <span class="icon is-small"><i class="fa fa-lock"></i></span>
                         </p>
                     </div>
@@ -71,7 +71,7 @@ include ('master.php');
                 <div class="columns">
                     <div class="column is-6">
                          <p class="control has-icon">
-                            <input class="input" type="number" name="age" requireds placeholder="Age" maxlength="15">
+                            <input class="input" type="number" name="age" required placeholder="Age" maxlength="15">
                             <span class="icon is-small"><i class="fa fa-lock"></i></span>
                         </p>
                         
@@ -80,7 +80,7 @@ include ('master.php');
                     <div class="column is-6">
 
                         <p class="control has-icon">
-                            <input class="input" type="tel" maxlength="10" name="mob" requireds placeholder="Mobile Number">
+                            <input class="input" type="tel" maxlength="10" name="mob" required placeholder="Mobile Number">
                             <span class="icon is-small"><i class="fa fa-lock"></i></span>
                         </p>
                     </div>
@@ -90,7 +90,7 @@ include ('master.php');
                     <div class="column is-6">
                        <div class="control">
                             <div class="select is-fullwidth">
-                                <select requireds name="gender">
+                                <select required name="gender">
                                     <option disabled selected >Gender</option>
                                     <option>Male</option>
                                     <option>Female</option>
@@ -104,7 +104,7 @@ include ('master.php');
                     <div class="column is-6">
                         <div class="control">
                             <div class="select is-fullwidth">
-                                <select requireds name="blood">
+                                <select required name="blood">
                                     <option disabled selected >Blood Group</option>
                                     <option>A+</option>
                                     <option>A-</option>

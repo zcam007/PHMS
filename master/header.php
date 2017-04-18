@@ -1,6 +1,16 @@
 <!--suppress JSUnresolvedLibraryURL -->
 <script src="js/main.js"></script>
-<header class="nav is-mobile" style="background-color: #006699">
+<style>
+    .header{
+background-color: black !important;
+    }
+    .header1
+    {
+background-color: #006699 !important;
+    }
+</style>
+<!--//prev color -#006699-->
+<header class="nav is-mobile" id="header">
     <div class="container">
         <div class="nav-left">
             <a class="nav-item">
@@ -20,7 +30,24 @@
         </div>
     </div>
 </header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script>
-
-
+$(window).on('load', function()
+{ 
+     console.log( "header");
+     var pathname = window.location.pathname; // Returns path only
+     //var url  = window.location.href;
+    // var pathname=$(location).attr('href');
+     if(pathname=='/PatientHealthMonitoringSystem/home.php')
+     {
+         console.log("yes");
+          $("#header").addClass("header");
+           $("#header").removeClass("header1");
+     }
+     else{
+     console.log("hhsd"); 
+     $("#header").removeClass("header");
+    $("#header").addClass("header1");
+     }
+});
 </script>

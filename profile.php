@@ -32,7 +32,8 @@ if (!$conn) {
 
 $sql = "SELECT gender, age FROM users where username='$loggedinuser'";
 $result = mysqli_query($conn, $sql);
-
+$cookie_value_1="";
+$cookie_value_2="";
 if (mysqli_num_rows($result) > 0) 
 {
     // output data of each row
@@ -64,8 +65,8 @@ mysqli_close($conn);
             <p class="column is-offset-5 dashboard" ">Dashboard </p>
 
     <div class="column is-offset-10 ">
-
-        <p>Welcome <?php echo $loggedinuser?>!</p>
+        <p  class="_welcomeMsg">Welcome <?php echo $loggedinuser?>!</p>
+        <p  class="_welcomeMsg"><?php echo $cookie_value_2;echo ',';echo $cookie_value_1;?></p>
 
     </div>
     </div>
@@ -73,11 +74,12 @@ mysqli_close($conn);
         <div class="container overridebody ">
         
         <div class=" columns ">
-                <div class="column is-3 "><img src="img/h_b_stop.jpg " alt="Heart " height="202 " width="602 " onclick="triggerAlerts() " id="heartbeat"></div>
+                <div class="column is-3 "><img src="img/h_b_stop.jpg " class="animated pulse" alt="Heart " height="202 " width="602 " onclick="triggerAlertss() " id="heartbeat"></div>
                 
                 <div class="column is-3 ">
                     <p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>
-                    <table class="_statustable" id="statustable"><tr><td><div class="_statusbar" id="statusbar"> Status: </div></td><td class="_statusmsg" ID="statusmsg">None</td></tr></table>
+                    <p  id="live_blink" class="blink_text">Live &#x2909;</p>
+                    <table class="_statustable " id="statustable"><tr><td><div class="_statusbar" id="statusbar"> Status: </div></td><td class="_statusmsg" ID="statusmsg">None</td></tr></table>
                     
                 </div>
                 
@@ -88,18 +90,16 @@ mysqli_close($conn);
                 </span>
                 </div>
                 
-                <div class="column is-offset-2" id="switch_control" style="display:none;" >
+                <div class="column is-offset-2 " id="switch_control" style="display:none;" >
                     <iframe width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/channels/253471/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5&title=Beats+Per+Minute%28BPM%29&type=spline "></iframe> 
                     <br/><br/><br/>
                     <iframe width="450 " height="260 " style="border: 1px solid #cccccc; " src="https://thingspeak.com/channels/253471/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=10&title=Pulse&type=spline "></iframe>
                 </div>
         </div>
     </div>
-
     </div>
 </section>
 <script src="js/main.js "></script>
-<p style="color: red; " id="decoy " onclick="fetchdata(); ">hee</p>
 
 <?php
 include ('master/footer.php');

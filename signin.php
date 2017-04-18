@@ -8,7 +8,7 @@
 include ('master/header.php');
 include('master.php');
 ?>
-<section class="hero is-dark is-large">
+<section class="hero is-black is-large">
     <!-- Hero header: will stick at the top -->
     <div class="hero-head">
 
