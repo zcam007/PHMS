@@ -33,11 +33,11 @@ if (!$conn) {
 $sql = "SELECT gender, age FROM users where username='$loggedinuser'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) 
+{
     // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-      //  echo $row['gender'].$row["age"];
+    while($row = mysqli_fetch_assoc($result))
+     {
         $cookie_name_1 = "c_gender";
         $cookie_value_1 = $row['gender'];
         setcookie($cookie_name_1, $cookie_value_1, time() + (86400 * 30), "/");
@@ -45,7 +45,6 @@ if (mysqli_num_rows($result) > 0) {
         $cookie_name_2 = "c_age";
         $cookie_value_2 = $row['age'];
         setcookie($cookie_name_2, $cookie_value_2, time() + (86400 * 30), "/");
-
     }
 } 
 else {
@@ -74,7 +73,7 @@ mysqli_close($conn);
         <div class="container overridebody ">
         
         <div class=" columns ">
-                <div class="column is-3 "><img src="img/h_b_stop.jpg " alt="Heart " height="202 " width="602 " onclick="checkCookie() " id="heartbeat"></div>
+                <div class="column is-3 "><img src="img/h_b_stop.jpg " alt="Heart " height="202 " width="602 " onclick="triggerAlerts() " id="heartbeat"></div>
                 
                 <div class="column is-3 ">
                     <p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>
@@ -108,7 +107,7 @@ include ('master/footer.php');
 <script>
 $( window ).load(function() {
   // Run code
- //console.log( "ass");
+ //console.log( "asws");
 });
 function sms()
 {

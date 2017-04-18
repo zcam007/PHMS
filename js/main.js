@@ -52,10 +52,18 @@ function fetchdata(){
                 document.getElementById("bpmskeleton").innerHTML = "Heart Beats Per Minute:"+sensorvalue;
                 sensor_avg_value=( parseInt(sensorprevvalue)+parseInt(sensorvalue))/2.0;
                 // console.log(sensorprevvalue,sensorvalue,sensor_avg_value);
+                setCookie("c_sensor_avg_value",sensor_avg_value,30);
                 returnStatus();
             }
         });
         repeater = setTimeout(fetchdata, 2000);
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 var getJSON = function(url, callback)
 {
@@ -156,6 +164,38 @@ function returnStatus()
         female(age,colors);
     }
 }
+
+function ajaxEMAIL()
+{
+    console.log("Email Triggered");
+    $.ajax({
+  url: "email.php",
+  context: document.body
+}).done(function() {
+  //alert('sent');
+}).fail(function() {
+    alert( "error" );
+  });
+}
+
+function ajaxSMS()
+{
+    console.log("SMS Triggered");
+    $.ajax({
+  url: "sendsms/index.php",
+  context: document.body
+}).done(function() {
+  //alert('sent');
+}).fail(function() {
+    alert( "error" );
+  });
+}
+
+function triggerAlerts()
+{
+    ajaxEMAIL();
+    ajaxSMS();
+}
 function male(age,colors)
 {
     console.log("Male triggered");
@@ -202,6 +242,7 @@ function male(age,colors)
                 console.log("Poor");
                 statusmsg.innerHTML="Poor";
                 statusmsg.style.color=colors[2];
+                
             }
         }
         if(age>=26 && age<=35)
