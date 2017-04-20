@@ -1,7 +1,9 @@
 var sensorvalue;
 var sensor_avg_value;
 var ageShuffleFlag=false;
+var foodShuffleFlag=false;
 var underAgeActivities;
+var underAgeFood;
 function loginRedirect() {
     console.log("hello");
     var k=document.getElementById("signinbtn").innerText;
@@ -119,6 +121,7 @@ function btnctrlfunc()
         $("#switch_control").removeClass("animated fadeOutDown");
         $("#switch_control").addClass("animated fadeInUp");
         ageShuffleFlag=false; //For shuffling
+        foodShuffleFlag=false;//Food Shuffling
         $("#statustable").removeClass("animated fadeOutDown");
         $("#statustable").addClass("animated flipInY");
         
@@ -802,6 +805,7 @@ function shuffle(array) {
 
 function recommendation(age,msg,tags)
 {
+
     /*    --TAGS--
         0-"Athelete",
         1-"Excellent",
@@ -813,8 +817,6 @@ function recommendation(age,msg,tags)
     */
    
     console.log("recommendation triggered");
-   // $('#recommendationDIV p').html('');
-  //  $('#recommendationDIV ul').html('');
     $('#recommendationDIV').html('');
     if(msg==tags[0]||msg==tags[1]||msg==tags[2])
     {
@@ -822,25 +824,38 @@ function recommendation(age,msg,tags)
     }
     else if(msg==tags[3]||msg==tags[4])//abv_avg && Average
     { 
-    $('#recommendationDIV').append('<p class="_recResults">Your Heart Rate is Average.. Please follow below things to Maintain good health!</p>');
-    $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Age</li></ul>');
-    ageRecommendation(age);
-
+        $('#recommendationDIV').append('<p class="_recResults">Your Heart Rate is Average.. Please follow below things to Maintain good health!</p>');
+        $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Age</li></ul>');
+        ageRecommendation(age);
+        $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Based on your Food Habits</li></ul>');
+        foodRecommendation(age);
     }
     else //Below Average && Poor
     {
        $('#recommendationDIV').append('<p class="_recResults">Your Heart Rate is Poor.. Please be Cautious about your health!</p>');
        $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Age</li></ul>');
        ageRecommendation(age);
-       $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Food Habits</li></ul>');
-      
+       $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Based on your Food Habits</li></ul>');
+       foodRecommendation(age);
+       
     }
     console.log(age,msg);
 }
 
 function ageRecommendation(age)
 {
-    var activities=["Reduce Stress🙆‍","Regular Excersize&#x1f3cb;","Sleep Better🛌","Eat Chocolates🍫","Avoid Smoking&#x1f6ad;","Reduce Intake of Caffeine&#x2615;","Do Regular Yoga🤸","Loose Weight🛴","Regular Walking&#x1f6b6;"];
+    var activities=
+    [
+    "<a href='https://www.psychologytoday.com/blog/finding-cloud9/201308/5-quick-tips-reduce-stress-and-stop-anxiety' target='_blank' >Reduce Stress🙆‍</a>",
+    "<a href='http://www.thefitindian.com/5-minute-fat-burning-workouts-at-home-best-exercises-to-lose-weight/' target='_blank' >Regular Excercise&#x1f3cb;</a>",
+    "<a href='https://www.helpguide.org/articles/sleep/how-to-sleep-better.htm' target='_blank' >Sleep Better🛌</a>",
+    "<a href='http://www.everydayhealth.com/columns/jared-bunch-rhythm-of-life/dark-chocolate-for-stress-relief-and-heart-health/' target='_blank' >Eat Chocolates🍫</a>",
+    "<a href='https://quitday.org/quit-smoking/quit-smoking-tips/ ' target='_blank'>Avoid Smoking&#x1f6ad;</a>",
+    "<a href='http://www.everydayhealth.com/sleep/101/move-more-drink-less.aspx' target='_blank' >Reduce Intake of Caffeine&#x2615;</a>",
+    "<a href='http://www.stylecraze.com/articles/basic-yoga-asanas-for-beginners/#gref' target='_blank' >Do Regular Yoga🤸</a>",
+    "<a href='http://everydayroots.com/weight-loss-remedies' target='_blank' >Loose Weight🛴</a>",
+    "<a href='https://www.betterhealth.vic.gov.au/health/healthyliving/walking-for-good-health' target='_blank' >Regular Walking&#x1f6b6;</a>"
+    ];
     if(age<=25)
     {
         if(!ageShuffleFlag){
@@ -865,7 +880,7 @@ function ageRecommendation(age)
          $('#recSubTree').append('<li class="_subtreeItems">'+underAgeActivities[i]+'</li>');
         }
     }
-    else //age>65
+    else //age>55
     {
         if(!ageShuffleFlag){
         underAgeActivities=[activities[4],activities[5],activities[6],activities[7],activities[8]];
@@ -875,6 +890,51 @@ function ageRecommendation(age)
         for(i=0;i<5;i++)
         {
          $('#recSubTree').append('<li class="_subtreeItems">'+underAgeActivities[i]+'</li>');
+        }
+    }
+}
+
+function foodRecommendation(age)
+{
+console.log("Food Recommmendation triggered");
+var foodItems=["Eat Chocolates","Eat Walnuts","Eat Raisins","Eat Almonds","Drink Milk","Eat Fish","Eat Tofu","Eat Brazil Nuts","Eat Banana","Eat Spinach","Eat Tomatoes","Eat Garlic","Eat Pumpkin","Eat Avacadoes"];
+    if(age<=25)
+    {
+        if(!foodShuffleFlag)
+        {
+            underAgeFood=[foodItems[0],foodItems[1],foodItems[2],foodItems[3],foodItems[4]];
+            underAgeFood=shuffle(underAgeFood);
+            foodShuffleFlag=true;
+        }
+        for(i=0;i<4;i++)
+        {
+         $('#recFoodSubTree').append('<li class="_subtreeItems">'+underAgeFood[i]+'</li>');
+        }
+    }
+    else if(age>=26 && age<=55)
+    {
+        if(!foodShuffleFlag)
+        {
+            underAgeFood=[foodItems[5],foodItems[6],foodItems[7],foodItems[8],foodItems[9]];
+            underAgeFood=shuffle(underAgeFood);
+            foodShuffleFlag=true;
+        }
+        for(i=0;i<4;i++)
+        {
+         $('#recFoodSubTree').append('<li class="_subtreeItems">'+underAgeFood[i]+'</li>');
+        }
+    }
+    else  //age>=55
+    {
+        if(!foodShuffleFlag)
+        {
+            underAgeFood=[foodItems[9],foodItems[10],foodItems[11],foodItems[12],foodItems[13]];
+            underAgeFood=shuffle(underAgeFood);
+            foodShuffleFlag=true;
+        }
+        for(i=0;i<4;i++)
+        {
+         $('#recFoodSubTree').append('<li class="_subtreeItems">'+underAgeFood[i]+'</li>');
         }
     }
 }
