@@ -71,4 +71,28 @@
          
      }
 
-     
+     ._recommHeading
+     {
+         color:lightgreen;
+         font-size: 16px;
+         opacity: 1;
+     }
+     ._recDIV
+     {
+         width:500px;
+         height:400px;
+         overflow:auto;
+     }
+     ._recResults
+     {
+         color:white;
+     }
+     ._recResultsListitems
+     {
+         color:#7EC0EE;
+         font-size: small;
+     }
+     ._subtreeItems
+     {
+         color:white;
+     }

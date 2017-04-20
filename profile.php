@@ -74,7 +74,15 @@ mysqli_close($conn);
         <div class="container overridebody ">
         
         <div class=" columns ">
-                <div class="column is-3 "><img src="img/h_b_stop.jpg " class="animated pulse" alt="Heart " height="202 " width="602 " onclick="triggerAlertss() " id="heartbeat"></div>
+                <div class="column is-3 ">
+                    <img src="img/h_b_stop.jpg " class="animated pulse" alt="Heart " height="202 " width="602 " onclick="triggerAlertss() " id="heartbeat">
+                    <p class="_recommHeading">  &#x271A;Recommendations</p>
+                    <div id="recommendationDIV" class="_recDIV">
+
+
+                    </div>
+
+                </div>
                 
                 <div class="column is-3 ">
                     <p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>
