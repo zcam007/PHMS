@@ -20,9 +20,9 @@ background-color: #006699 !important;
         </div>
         <span class="nav-toggle"></span>
         <div class="nav-right nav-menu">
-            <a class="nav-item header_color" href="home.php">Home</a>
-            <a class="nav-item header_color" href="aboutus.php">About</a>
-            <a class="nav-item header_color" id="profile_tab" href="profile.php">Profile</a>
+            <a class="nav-item header_color" href="home">Home</a>
+            <a class="nav-item header_color" href="aboutus">About</a>
+            <a class="nav-item header_color" id="profile_tab" href="profile">Profile</a>
             <span class="nav-item">
                 <a class="button is-primary is-inverted"  onclick="loginRedirect()"  style="color: black !important; ">
                     <span id="signinbtn">SignIn</span><span class="icon"><i class="fa fa-sign-in"></i></span></a>
@@ -38,7 +38,7 @@ $(window).on('load', function()
      var pathname = window.location.pathname; // Returns path only
      //var url  = window.location.href;
     // var pathname=$(location).attr('href');
-     if(pathname=='/PatientHealthMonitoringSystem/home.php')
+     if(pathname=='/PatientHealthMonitoringSystem/home')
      {
          console.log("yes");
           $("#header").addClass("header");

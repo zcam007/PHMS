@@ -10,7 +10,7 @@ function loginRedirect() {
     if(k=="SignIn")
     {
         console.log("signin");
-        window.location.href="signin.php";
+        window.location.href="signin";
     }
     else
     {
@@ -21,13 +21,13 @@ function logout() {
     var xhr = new XMLHttpRequest();
     xhr.onload = function()
     {
-        document.location = 'logout.php';
+        document.location = 'logout';
     }
     xhr.open('GET', 'logoutajax.php', true);
     xhr.send();
 }
 function signUpRedirect() {
-    window.location="signup.php";
+    window.location="signup";
 }
 
 
@@ -53,7 +53,8 @@ function fetchdata(){
                sensorprevvalue=data.feeds[len-2].field1;
                 sensorvalue=data.feeds[len-1].field1;
                
-                document.getElementById("bpmskeleton").innerHTML = "Heart Beats Per Minute:"+sensorvalue;
+                //document.getElementById("bpmskeleton").innerHTML = "Heart Beats Per Minute:"+sensorvalue;
+                document.getElementById("bpmskeleton").innerHTML = sensorvalue;
                 sensor_avg_value=( parseInt(sensorprevvalue)+parseInt(sensorvalue))/2.0;
                 // console.log(sensorprevvalue,sensorvalue,sensor_avg_value);
                 setCookie("c_sensor_avg_value",sensor_avg_value,30);
@@ -120,6 +121,10 @@ function btnctrlfunc()
         blnk.style.display='block';
         $("#switch_control").removeClass("animated fadeOutDown");
         $("#switch_control").addClass("animated fadeInUp");
+        
+        $("#recommendationDIV").removeClass("animated fadeOutDown");
+         $("#recommendationDIV").addClass("animated fadeInUp");
+       
         ageShuffleFlag=false; //For shuffling
         foodShuffleFlag=false;//Food Shuffling
         $("#statustable").removeClass("animated fadeOutDown");
@@ -133,6 +138,9 @@ function btnctrlfunc()
         stop_fetchdata();
         $("#switch_control").removeClass("animated fadeInUp");
         $("#switch_control").addClass("animated fadeOutDown");
+
+        $("#recommendationDIV").removeClass("animated fadeInUp");
+        $("#recommendationDIV").addClass("animated fadeOutDown");
         
         $("#statustable").removeClass("animated flipInY");
         $("#statustable").addClass("animated fadeOutDown");
@@ -141,8 +149,7 @@ function btnctrlfunc()
         //statustable.style.display='none';
         blnk.style.display='none';
         //status_table.style.display='none';
-        
-        document.getElementById("bpmskeleton").innerHTML = "Heart Beats Per Minute: Not Loaded!";
+        document.getElementById("bpmskeleton").innerHTML = "Not Loaded!";
     }
     
 }
@@ -214,8 +221,9 @@ function ajaxSMS()
 
 function triggerAlerts()
 {
-    ajaxEMAIL();
-    ajaxSMS();
+    //ajaxEMAIL();
+    //ajaxSMS();
+    console.log("triggerAlerts fired");
 }
 function male(age,colors,tags)
 {
@@ -825,19 +833,19 @@ function recommendation(age,msg,tags)
     else if(msg==tags[3]||msg==tags[4])//abv_avg && Average
     { 
         $('#recommendationDIV').append('<p class="_recResults">Your Heart Rate is Average.. Please follow below things to Maintain good health!</p>');
-        $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Age</li></ul>');
+        $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Recommendations Based on your Age</li></ul>');
         ageRecommendation(age);
-        $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Based on your Food Habits</li></ul>');
+        $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Recommendations Based on your Food Habits</li></ul>');
         foodRecommendation(age);
     }
     else //Below Average && Poor
     {
-       $('#recommendationDIV').append('<p class="_recResults">Your Heart Rate is Poor.. Please be Cautious about your health!</p>');
-       $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Based on your Age</li></ul>');
+       $('#recommendationDIV').append('<p class="_recResults"">Your Heart Rate is<span style="color:red;"><strong> Poor</strong></span>.. Please be cautious about your health!</p>');
+       $('#recommendationDIV').append('<br/><ul id="recSubTree" "><li class="_recResultsListitems">Recommendations Based on your Age</li></ul>');
        ageRecommendation(age);
-       $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Based on your Food Habits</li></ul>');
+       $('#recommendationDIV').append('<br/><ul id="recFoodSubTree" "><li class="_recResultsListitems">Recommendations Based on your Food Habits</li></ul>');
        foodRecommendation(age);
-       
+       //setTimeout(triggerAlerts,10000);
     }
     console.log(age,msg);
 }

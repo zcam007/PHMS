@@ -103,7 +103,7 @@ if ( isset( $_POST['Submit'] ) ) {
     {
         //echo "<script>alert('ss');</script>";
         $_SESSION['username'] = $username;
-        echo"<script>window.location='profile.php';</script>";
+        echo"<script>window.location='profile';</script>";
     }
     else
         {

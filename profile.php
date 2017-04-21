@@ -85,7 +85,8 @@ mysqli_close($conn);
                 </div>
                 
                 <div class="column is-3 ">
-                    <p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>
+                    <!--<p  class="sensor_reading " id="bpmskeleton">Heart Beats Per Minute: <span style="color:red;">Not Loaded!</span></p>-->
+                    <table cellspacing="0" class="sensor_reading"><tr><td> Heart Beats Per Minute(BPM):</td><td style="color:red; align:left;" ID="bpmskeleton">Not Loaded</td></tr></table>
                     <p  id="live_blink" class="blink_text">Live &#x2909;</p>
                     <table class="_statustable " id="statustable"><tr><td><div class="_statusbar" id="statusbar"> Status: </div></td><td class="_statusmsg" ID="statusmsg">None</td></tr></table>
                     
