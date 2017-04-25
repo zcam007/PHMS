@@ -22,7 +22,7 @@ background-color: #006699 !important;
         <div class="nav-right nav-menu">
             <a class="nav-item header_color" href="home">Home</a>
             <a class="nav-item header_color" href="aboutus">About</a>
-            <a class="nav-item header_color" id="profile_tab" href="profile">Profile</a>
+            <a class="nav-item header_color" id="profile_tab" href="profile">Dashboard</a>
             <span class="nav-item">
                 <a class="button is-primary is-inverted"  onclick="loginRedirect()"  style="color: black !important; ">
                     <span id="signinbtn">SignIn</span><span class="icon"><i class="fa fa-sign-in"></i></span></a>

@@ -906,11 +906,12 @@ function foodRecommendation(age)
 {
 console.log("Food Recommmendation triggered");
 var foodItems=["Eat Chocolates","Eat Walnuts","Eat Raisins","Eat Almonds","Drink Milk","Eat Fish","Eat Tofu","Eat Brazil Nuts","Eat Banana","Eat Spinach","Eat Tomatoes","Eat Garlic","Eat Pumpkin","Eat Avacadoes"];
+var foodItems1=["Take Cinnamon","Hawthorn","Eat ripe Guavas on empty stomach","Take Brown Rice","Eat Whole-wheat bread","Eat Beans","Eat Broccoli","Eat Baked potatoes","Drink Orange Juice"];
     if(age<=25)
     {
         if(!foodShuffleFlag)
         {
-            underAgeFood=[foodItems[0],foodItems[1],foodItems[2],foodItems[3],foodItems[4]];
+            underAgeFood=[foodItems[0],foodItems[1],foodItems[2],foodItems[3],foodItems[4],foodItems1[2],foodItems1[8]];
             underAgeFood=shuffle(underAgeFood);
             foodShuffleFlag=true;
         }
@@ -923,7 +924,7 @@ var foodItems=["Eat Chocolates","Eat Walnuts","Eat Raisins","Eat Almonds","Drink
     {
         if(!foodShuffleFlag)
         {
-            underAgeFood=[foodItems[5],foodItems[6],foodItems[7],foodItems[8],foodItems[9]];
+            underAgeFood=[foodItems1[0],foodItems1[3],foodItems1[4],foodItems1[5],foodItems1[7], foodItems[5],foodItems[6],foodItems[7],foodItems[8],foodItems[9]];
             underAgeFood=shuffle(underAgeFood);
             foodShuffleFlag=true;
         }
@@ -936,7 +937,7 @@ var foodItems=["Eat Chocolates","Eat Walnuts","Eat Raisins","Eat Almonds","Drink
     {
         if(!foodShuffleFlag)
         {
-            underAgeFood=[foodItems[9],foodItems[10],foodItems[11],foodItems[12],foodItems[13]];
+            underAgeFood=[foodItems1[1],foodItems1[3],foodItems1[6],foodItems1[7],foodItems1[4],foodItems[9],foodItems[10],foodItems[11],foodItems[12],foodItems[13]];
             underAgeFood=shuffle(underAgeFood);
             foodShuffleFlag=true;
         }
